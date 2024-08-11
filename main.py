@@ -31,7 +31,17 @@ def caesar_cipher(original_text, shift_amount, direction):
             # Finally, we are passing the swapped_index to the alphabet list in order to get the letter that is stored
             # at the passed in index, and we are adding that letter to the output variable.
             output += alphabet[swapped_index]
-    print(f"The encoded text is: {output}")
+    print(f"The {direction}d text is: {output}")
 
-caesar_cipher('jgnnq', 2, 'decode')
+running = True
+while running:
+
+    # Ask user for input
+    direction = input("Type encode to encrypt a message, or decode to decrypt a message:\n").lower()
+    user_input = input("Please type a message:\n").lower()
+    shift_amount = int(input("How far do you want the letters shifted? (Type a number. 1, 2, 3, etc.):\n"))
+
+    caesar_cipher(original_text=user_input, shift_amount=shift_amount, direction=direction)
+
+
 
